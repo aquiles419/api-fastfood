@@ -15,17 +15,19 @@ class Categories extends Model {
                 },
                 name: Sequelize.STRING,
                 description: Sequelize.STRING,
-                category_image: Sequelize.STRING,
-                created_at: Sequelize.DATE,
-                updated_at: Sequelize.DATE,
+                category_image: Sequelize.STRING
             },
             {
                 sequelize,
-                tableName: 'categories',
-                timestamps: false,
-                underscored: false,
+                tableName: 'TB_CATEGORIES'
             }
         );
+    }
+    
+    static associate(models) {
+        this.hasMany(models.Products, {
+            foreignKey: 'categories_id'
+        });
     }
 }
 

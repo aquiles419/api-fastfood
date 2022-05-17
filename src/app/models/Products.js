@@ -11,20 +11,16 @@ class Products extends Model {
                 },
                 categories_id: {
                     type: Sequelize.INTEGER,
-                    references: { model: 'categories', key: 'id' },
+                    // references: { model: 'categories', key: 'id' },
                 },
                 name: Sequelize.STRING,
                 description: Sequelize.STRING,
                 price: Sequelize.STRING,
-                image_product: Sequelize.STRING,
-                created_at: Sequelize.DATE,
-                updated_at: Sequelize.DATE,
+                image_product: Sequelize.STRING
             },
             {
                 sequelize,
-                tableName: 'products',
-                timestamps: false,
-                underscored: false,
+                tableName: 'TB_PRODUCTS'
             }
         );
     }

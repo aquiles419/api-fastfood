@@ -16,3 +16,9 @@ yarn sequelize db:migrate:undo:all
 
 # execute all migration created
 yarn sequelize-cli db:migrate
+
+# execute all seeds
+yarn sequelize-cli db:seed:all
+
+# execute all the last migration created
+yarn sequelize-cli db:seed:undo:all

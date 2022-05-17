@@ -14,19 +14,14 @@ class Shops extends Model {
                     references: { model: 'users', key: 'id' },
                 },
                 fantasy_name: Sequelize.STRING,
-                coporate_name: Sequelize.STRING,
+                corporate_name: Sequelize.STRING,
                 cnpj: Sequelize.STRING,
                 email: Sequelize.STRING,
-                telephone: Sequelize.STRING,
-                created_at: Sequelize.DATE,
-                updated_at: Sequelize.DATE,
-
+                phone: Sequelize.STRING
             },
             {
                 sequelize,
-                tableName: 'shops',
-                timestamps: false,
-                underscored: false,
+                tableName: 'TB_SHOPS'
             }
         );
     }

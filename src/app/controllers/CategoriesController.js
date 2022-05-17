@@ -1,10 +1,13 @@
 import Errors from '../helpers/Errors';
 import Categories from '../models/Category';
+import Products from '../models/Products';
 
 class CategoriesController {
     async list(req, res) {
         try {
-            const response = await Categories.findAll(req.query);
+            const response = await Categories.findAll({
+                order: [['name', 'ASC']],
+            });
 
             res.json(response);
         } catch (error) {
@@ -17,9 +20,20 @@ class CategoriesController {
 
     async getOne(req, res) {
         try {
-            const categories = await Categories.findOne(req.params);
+            const { id } = req.params;
+            const categories = await Categories.findOne({
+                where: {
+                    id
+                }
+            });
 
             if (!categories) throw Errors.CATEGORIES;
+
+            const products = await categories.getProducts({
+               order: [['name', 'ASC']]
+            });
+
+            categories.setDataValue('products', products);
 
             res.json(categories);
         } catch (error) {

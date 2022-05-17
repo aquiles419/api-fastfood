@@ -1,6 +1,6 @@
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable('shops', {
+        await queryInterface.createTable('TB_SHOPS', {
             id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
@@ -9,14 +9,14 @@ module.exports = {
             },
             user_id: {
                 type: Sequelize.INTEGER,
-                references: { model: 'users', key: 'id' },
+                references: { model: 'TB_USERS', key: 'id' },
                 allowNull: false,
             },
             fantasy_name: {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            coporate_name: {
+            corporate_name: {
                 type: Sequelize.STRING,
                 allowNull: false,
                 unique: true,
@@ -29,7 +29,7 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            telephone: {
+            phone: {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
@@ -45,6 +45,6 @@ module.exports = {
     },
 
     down: async (queryInterface) => {
-        await queryInterface.dropTable('shops');
+        await queryInterface.dropTable('TB_SHOPS');
     },
 };
