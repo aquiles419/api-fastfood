@@ -15,6 +15,7 @@ module.exports = {
             fantasy_name: {
                 type: Sequelize.STRING,
                 allowNull: false,
+                unique: true,
             },
             corporate_name: {
                 type: Sequelize.STRING,
@@ -24,14 +25,17 @@ module.exports = {
             cnpj: {
                 type: Sequelize.STRING,
                 allowNull: false,
+                unique: true,
             },
             email: {
                 type: Sequelize.STRING,
                 allowNull: false,
+                unique: true,
             },
             phone: {
                 type: Sequelize.STRING,
                 allowNull: false,
+                unique: true,
             },
             created_at: {
                 type: Sequelize.DATE,

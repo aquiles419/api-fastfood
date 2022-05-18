@@ -1,6 +1,5 @@
 import Errors from '../helpers/Errors';
 import Categories from '../models/Category';
-import Products from '../models/Products';
 
 class CategoriesController {
     async list(req, res) {

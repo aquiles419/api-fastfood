@@ -19,17 +19,14 @@ module.exports = {
             description: {
                 type: Sequelize.STRING,
                 allowNull: false,
-                unique: true,
             },
             price: {
                 type: Sequelize.STRING,
                 allowNull: false,
-                unique: true,
             },
             image_product: {
                 type: Sequelize.STRING,
                 allowNull: false,
-                unique: true,
             },
             created_at: {
                 type: Sequelize.DATE,
